@@ -44,6 +44,7 @@ class HrEmployee(models.Model):
                                   string="Experience monthes", store=True)
     experience_d = fields.Integer(compute="_calculate_experience",
                                   string="Experience dayes", store=True)
+    absence_counter = fields.Integer()
 
     @api.depends("birthday")
     def _calculate_age(self):
